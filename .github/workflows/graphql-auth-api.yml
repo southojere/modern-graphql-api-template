@@ -24,7 +24,7 @@ jobs:
           # Maps tcp port 5432 on service container to the host
           - 5432:5432
     env:
-      DATABASE_URL: postgresql://postgres:postgres@localhost:5432/graphql-auth-api
+      DATABASE_URL: postgres://prisma:prisma@localhost:5432/
     steps:
       - uses: actions/checkout@v2
       - uses: actions/setup-node@v1
