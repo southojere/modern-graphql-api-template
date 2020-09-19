@@ -60,13 +60,19 @@ This means our application will run constantly even if no requests are made to i
 
 We are using Github Actions.
 
+## Prisma Studio (Built in database management tool)
+```
+npx prisma studio --experimental
+```
+
+# Usage
 ### Register a new user
 
 You can send the following mutation in the Playground to sign up a new user and retrieve an authentication token for them:
 
 ```graphql
 mutation {
-  signup(name: "Sarah", email: "sarah@prisma.io", password: "graphql") {
+  signup(name: "Sarah", email: "sarah@example.io", password: "pass") {
     token
   }
 }
@@ -78,7 +84,7 @@ This mutation will log in an existing user by requesting a new authentication to
 
 ```graphql
 mutation {
-  login(email: "sarah@prisma.io", password: "graphql") {
+  login(email: "sarah@example.io", password: "pass") {
     token
   }
 }
@@ -127,3 +133,8 @@ npx prisma generate
 ```
 
 This command updated the Prisma Client API in `node_modules/@prisma/client`.
+
+### TODO
+[] - Add tests
+[] - Add Prisma app to docker file
+[] - Figure out how to deploy to other services other than heroku
