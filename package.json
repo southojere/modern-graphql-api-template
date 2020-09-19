@@ -9,7 +9,9 @@
     "generate:prisma": "prisma generate",
     "generate:nexus": "ts-node --transpile-only src/schema",
     "dev": "ts-node-dev --no-notify --respawn --transpileOnly src/server",
-    "seed": "ts-node src/seed/index.ts"
+    "seed": "ts-node src/seed/index.ts",
+    "test": "echo run tests here",
+    "migrate:up": "prisma migrate --experimental up --auto-approve --create-db"
   },
   "dependencies": {
     "@nexus/schema": "0.15.0",

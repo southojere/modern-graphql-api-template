@@ -36,6 +36,11 @@ Starting the GraphQL server
 yarn dev
 ```
 
+Seeding data
+```
+yarn seed
+```
+
 Navigate to [http://localhost:4000](http://localhost:4000) in your browser to explore the API of your GraphQL server in a [GraphQL Playground](https://github.com/prisma/graphql-playground).
 
 
@@ -45,6 +50,15 @@ Navigate to [http://localhost:4000](http://localhost:4000) in your browser to ex
 2) next save the migration `npx prisma migrate save --experimental --name "init-db"` (prisma will take a snapshot of the schema and figure out the necessary steps to carry out the migration)
 3) run the migration `npx prisma migrate up --experimental` (prisma migrate will use the newly created migration file to run the migration and alter the DB)
 
+
+# Deployment
+
+We are using Heroku to host the database and GraphQL API (PaaS).
+This means our application will run constantly even if no requests are made to it. (FaaS vs PaaS https://www.prisma.io/docs/reference/tools-and-interfaces/prisma-client/deployment#deployment-paradigms)
+
+# CI/CD
+
+We are using Github Actions.
 
 ### Register a new user
 
