@@ -3,14 +3,6 @@ import { getUserId } from '../utils'
 
 export const Query = queryType({
   definition(t) {
-    t.field('users', {
-        type: 'User',
-        nullable: true,
-        resolve: async (parent, args, {prisma}) => {
-          const users = await  prisma.user.findMany()
-          return users;
-        },
-      })
     t.field('me', {
       type: 'User',
       nullable: true,
