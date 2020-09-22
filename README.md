@@ -69,6 +69,8 @@ Navigate to [http://localhost:4000](http://localhost:4000) in your browser to ex
 We are using Heroku to host the database and GraphQL API (PaaS).
 This means our application will run constantly even if no requests are made to it. (FaaS vs PaaS https://www.prisma.io/docs/reference/tools-and-interfaces/prisma-client/deployment#deployment-paradigms)
 
+Ref: https://www.prisma.io/docs/guides/deployment/deploying-to-heroku
+
 # CI/CD
 
 We are using Github Actions.
