@@ -6,17 +6,17 @@ const seedUserData = (prisma: any) => {
     {
       email: 'southon@test.com',
       name: 'jeremy',
-      password: 'pass',
+      password: '$2a$10$Bc7sDD.a.paDMDVMBexzXuUw6Renj71b8KZZYPAqJMVhFSxALUTke',
     },
     {
       email: 'admin@example.com',
       name: 'admin',
-      password: 'pass',
+      password: '$2a$10$Bc7sDD.a.paDMDVMBexzXuUw6Renj71b8KZZYPAqJMVhFSxALUTke',
     },
     {
       email: 'test-user@test.com',
       name: 'Jane',
-      password: 'pass',
+      password: '$2a$10$Bc7sDD.a.paDMDVMBexzXuUw6Renj71b8KZZYPAqJMVhFSxALUTke',
     },
   ]
 
