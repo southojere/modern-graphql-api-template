@@ -19,26 +19,39 @@ This example shows how to implement a **GraphQL server with an email-password-ba
 Install dependencies:
 
 ```
-yarn
+npm install
 ```
 
 
-Rename example.env to .env. Then start up the database.
+Rename .env.example to .env. Then start up the database.
 
 ```
 docker-compose up -d
 ```
 then `docker-compose ps` to verify your database has started.
 
+Generate types
+
+```
+npm run generate
+```
+
+Running the database for the first time (run migration scripts)
+
+```
+npm run migrate:up
+```
+
 Starting the GraphQL server
 
 ```
-yarn dev
+npm run dev
 ```
 
 Seeding data
+
 ```
-yarn seed
+npm run seed
 ```
 
 Navigate to [http://localhost:4000](http://localhost:4000) in your browser to explore the API of your GraphQL server in a [GraphQL Playground](https://github.com/prisma/graphql-playground).
@@ -61,8 +74,9 @@ This means our application will run constantly even if no requests are made to i
 We are using Github Actions.
 
 ## Prisma Studio (Built in database management tool)
+If you want to view the database
 ```
-npx prisma studio --experimental
+npm run studio
 ```
 
 # Usage
@@ -71,8 +85,11 @@ npx prisma studio --experimental
 You can send the following mutation in the Playground to sign up a new user and retrieve an authentication token for them:
 
 ```graphql
-mutation {
-  signup(name: "Sarah", email: "sarah@example.io", password: "pass") {
+mutation createUser {
+  signup(name:"bob", email:"bob@test.com", password: "pass") {
+    user {
+      name
+    }
     token
   }
 }
@@ -83,9 +100,13 @@ mutation {
 This mutation will log in an existing user by requesting a new authentication token for them:
 
 ```graphql
-mutation {
-  login(email: "sarah@example.io", password: "pass") {
+mutation login {
+ login(email:"bob@test.com",password:"pass"){
     token
+    user {
+      id
+      name
+    }
   }
 }
 ```
@@ -135,6 +156,6 @@ npx prisma generate
 This command updated the Prisma Client API in `node_modules/@prisma/client`.
 
 ### TODO
-[] - Add tests
-[] - Add Prisma app to docker file
-[] - Figure out how to deploy to other services other than heroku
+- [ ] Add tests
+- [ ] Add Prisma app to docker file
+- [ ] Figure out how to deploy to other services other than heroku

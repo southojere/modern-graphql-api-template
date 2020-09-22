@@ -11,7 +11,8 @@
     "dev": "ts-node-dev --no-notify --respawn --transpileOnly src/server",
     "seed": "ts-node src/seed/index.ts",
     "test": "echo run tests here",
-    "migrate:up": "prisma migrate --experimental up --auto-approve --create-db"
+    "migrate:up": "prisma migrate --experimental up --auto-approve --create-db",
+    "studio": "npx prisma studio --experimental"
   },
   "dependencies": {
     "@nexus/schema": "0.15.0",
