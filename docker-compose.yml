@@ -16,5 +16,13 @@ services:
     ports:
       - '5432:5432'
 
+  prisma:
+    build: .
+    restart: always
+    environment:
+      - DATABASE_URL=postgres://prisma:prisma@postgres/
+    ports:
+      - '4000:4000'
+
 volumes:
   postgres:
