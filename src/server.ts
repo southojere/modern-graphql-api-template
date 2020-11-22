@@ -6,7 +6,8 @@ import './generated/nexus'
 new GraphQLServer({
   schema,
   context: createContext,
-  middlewares: [permissions],
+  // TODO: was causing issue: Not Auth! fix this l8er
+  // middlewares: [permissions],
 }).start(() =>
   console.log(
     `🚀 Server ready at: http://localhost:4000\n⭐️ See sample queries: http://pris.ly/e/ts/graphql-auth#using-the-graphql-api`,

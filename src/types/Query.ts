@@ -31,6 +31,7 @@ export const Query = queryType({
         searchString: stringArg({ nullable: true }),
       },
       resolve: (parent, { searchString }, ctx) => {
+        console.log('test')
         return ctx.prisma.post.findMany({
           where: {
             OR: [

@@ -1,5 +1,5 @@
 import { PrismaClient } from '@prisma/client'
-import { ContextParameters } from 'graphql-yoga/dist/types'
+// import { ContextParameters } from 'graphql-yoga/dist/types'
 
 const prisma = new PrismaClient()
 
@@ -8,7 +8,8 @@ export interface Context {
   request: any
 }
 
-export function createContext(request: ContextParameters) {
+// TODO: add type for request
+export function createContext(request: any) {
   return {
     ...request,
     prisma,
